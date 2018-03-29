@@ -22,7 +22,7 @@ export function movieSearchByTitle (title) {
 
     return {
         type: types.MOVIE_SEARCH_BY_TITLE,
-        payload: axios.get('http://www.omdbapi.com/?s=' + title + '&apikey=8730e0e')
+        payload: axios.get('https://www.omdbapi.com/?s=' + title + '&apikey=8730e0e')
             .then(results => {
                 console.log(results);
                 searchResultsByMovieTitle = [
@@ -48,7 +48,7 @@ export function movieSearchById(id) {
 
     return {
         type: types.MOVIE_SEARCH_BY_ID,
-        payload: axios.get('http://www.omdbapi.com/?i=' + id + '&apikey=8730e0e')
+        payload: axios.get('https://www.omdbapi.com/?i=' + id + '&apikey=8730e0e')
             .then( results => {
                 searchResultsByMovieId[id] = results.data;
                 console.log(results.data)
